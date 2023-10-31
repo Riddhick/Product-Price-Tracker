@@ -9,7 +9,13 @@ const navIcons=[
 export default function Navbar() {
   return (
     
-    <div className="p-4 flex justify-end">
+    <div className="p-4 flex justify-between">
+          <div ><Image
+            src='/assets/logo.png'
+            height={50}
+            width={110}
+            className='rounded-full'
+          /></div>
           <div className="flex flex-row gap-6">
             {navIcons.map((icon)=>(
                 <Image
