@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FetchProducts, ScrapeAndStore } from '@/lib/actions';
+import { AutoUpdate, FetchProducts, ScrapeAndStore } from '@/lib/actions';
 
 
 export default function Tracked() {
@@ -17,6 +17,7 @@ export default function Tracked() {
         else{
             setButtonText("Tracked Items");
             setClicked(0);
+            //AutoUpdate();
         }
     }
   return (
