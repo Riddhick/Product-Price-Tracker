@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
+import Tracked from './Tracked'
 
 export default function Landing() {
   return (
-    <div className='flex flex-col justify-center items-center w-full gap-10'>
+    <><div className='flex flex-col justify-center items-center w-full gap-10'>
         <Image
         src='/assets/emptycart.png'
         width={300}
@@ -12,5 +13,7 @@ export default function Landing() {
     />
     <div className='text-xl text-neutral-600 font-bold'>Search An Item To Track! </div>
     </div>
+    <div className="p-4"><Tracked /></div>
+    </>
   )
 }
