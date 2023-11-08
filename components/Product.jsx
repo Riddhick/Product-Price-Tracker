@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { TrackProduct } from '@/lib/actions'
+import Tracked from './Tracked';
 
 export default function Product(props) {
   const track=async (event)=>{
@@ -8,6 +9,7 @@ export default function Product(props) {
   }
 
   return (
+    <div className="flex flex-col gap-10">
     <div className='flex flex-col w-full px-6 gap-6 text-center'>
         <div className='font-semibold pt-4 '>{props.details.Title}</div>
         <div className='w-full flex flex-row justify-center'><Image
@@ -25,6 +27,8 @@ export default function Product(props) {
           <button className='bg-black w-24 text-white p-2 rounded '><a href={props.details.Link}>Buy Now</a></button>
           <button className='bg-black w-24 text-white p-2 rounded' onClick={track}>Track</button>
         </div>
+    </div>
+    <div><Tracked /></div>
     </div>
   )
 }
