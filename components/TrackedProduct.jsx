@@ -21,7 +21,7 @@ export default function TrackedProduct(props) {
   return (
     <div className=" flex flex-row flex-wrap gap-20 justify-center align-items">
         {links.map((item)=>(
-            <div key={item.Title[10]} className="p-4 w-11/12 shadow-black flex flex-col justify-center items-center shadow-2xl rounded-xl">
+            <div key={item.Title[10]} className="p-4 w-11/12 lg:w-3/12 shadow-black flex flex-col  justify-center items-center shadow-2xl rounded-xl">
 
                 <div className="">{item.Title}</div>
                 <div className="my-4"><Image

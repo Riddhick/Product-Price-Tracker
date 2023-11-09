@@ -20,6 +20,11 @@
     <br> 
 </p>
 
+<img width=400px height=200px src="./public/assets/snapshots/1.png" alt="Snapshot 1">
+<img width=400px height=200px src="./public/assets/snapshots/2.png" alt="Snapshot 2"><br>
+<img width=200px height=450px src="./public/assets/snapshots/3.png" alt="Snapshot 3">
+<img width=200px height=1000px src="./public/assets/snapshots/4.png" alt="Snapshot 4">
+
 ## 📝 Table of Contents
 
 - [📝 Table of Contents](#-table-of-contents)

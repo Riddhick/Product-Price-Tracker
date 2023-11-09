@@ -9,14 +9,14 @@ const navIcons=[
 export default function Navbar() {
   return (
     
-    <div className="p-4 flex justify-between">
+    <div className="p-4 flex justify-between ">
           <div ><Image
             src='/assets/logo.png'
             height={50}
             width={110}
             className='rounded-full'
           /></div>
-          <div className="flex flex-row gap-6">
+          <div className="flex flex-row gap-6 lg:gap-20 lg:px-16">
             {navIcons.map((icon)=>(
                 <Image
                     key={icon.alt}

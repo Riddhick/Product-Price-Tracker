@@ -19,7 +19,7 @@ export default function Searchbar() {
   return (
     <>
     <form onSubmit={handleSubmit} className="m-2 px-2 flex flex-row justify-center gap-4">
-        <input type="text" placeholder="Enter Product Link" value={searchPrompt} onChange={(e)=>setSearchPrompt(e.target.value)} className="border-solid border-2 rounded px-2"></input>
+        <input type="text" placeholder="Enter Product Link" value={searchPrompt} onChange={(e)=>setSearchPrompt(e.target.value)} className="lg:w-7/12 border-solid border-2 rounded px-2"></input>
         <button type="submit" className="bg-black text-white p-1 rounded">Search</button>
     </form>
     {productDetails==null?<Landing/>:<Product details={productDetails}/>}
