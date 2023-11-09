@@ -1,29 +1,25 @@
 import React from 'react'
 import Image from 'next/image';
 import { removeItem } from '@/lib/actions';
+import { useState } from 'react';
 
 export default function TrackedProduct(props) {
- 
-  var items=[]
-  for(let i=0;i<props.products.length;i++){
-    items.push(props.products[i]);
-  }  
+  const [links,setLinks]=useState(props.products)
 
   async function DeleteItem(url){
-    //console.log(url.Link)
-    removeItem(url.Link)
-    const tempArr=[]
-    for(let i=0 ;i<items.length;i++){
-        if(items[i]!==url)
-            tempArr.push(items[i])
+    console.log(url.Link)
+    const temp=[]
+    for(let i=0;i<props.products.length;i++){
+      if(props.products[i].Link!==url.Link){
+          temp.push(props.products[i])
+      }
     }
-    items=tempArr;
-    window.location.reload(false)
-    console.log(items)
+    setLinks(temp);
+    removeItem(url.Link);
   }
   return (
     <div className=" flex flex-row flex-wrap gap-20 justify-center align-items">
-        {items.map((item)=>(
+        {links.map((item)=>(
             <div className="p-4 w-11/12 shadow-black flex flex-col justify-center items-center shadow-2xl rounded-xl">
                 <div className="">{item.Title}</div>
                 <div className="my-4"><Image
