@@ -28,7 +28,7 @@ export default function Tracked() {
   return (
     <div className="flex flex-col gap-8 justify-center items-center">
         <button className="text-white bg-black p-1 rounded" onClick={getProducts}>{buttonText}</button>
-        {productDetails==null?<></>:<TrackedProduct products={productDetails}/>}
+        {productDetails==null?<></>:<TrackedProduct  products={productDetails}/>}
     </div>
     
   )
