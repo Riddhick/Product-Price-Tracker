@@ -2,10 +2,36 @@ import React from 'react'
 import Image from 'next/image'
 import { TrackProduct } from '@/lib/actions'
 import Tracked from './Tracked';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer,toast } from 'react-toastify';
 
 export default function Product(props) {
   const track=async (event)=>{
+    try{
     await TrackProduct(props.details);
+    toast.success('Product Tracked', {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+    }
+    catch(error){
+      toast.error('Failed To Track ', {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+    }
   }
 
   return (
@@ -25,10 +51,22 @@ export default function Product(props) {
         </div>
         <div className='flex flex-row gap-2 items-center justify-center'> 
           <button className='bg-black w-24 text-white p-2 rounded '><a href={props.details.Link}>Buy Now</a></button>
-          <button className='bg-black w-24 text-white p-2 rounded' onClick={track}>Track</button>
+          <button className='bg-black w-24 text-white p-2 rounded' onClick={track}>Track</button> 
         </div>
     </div>
     <div><Tracked /></div>
+    <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+     />
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import { removeItem } from '@/lib/actions';
 import { useState } from 'react';
+import {motion,AnimatePresence} from  "framer-motion";
 
 
 export default function TrackedProduct(props) {
@@ -21,7 +22,7 @@ export default function TrackedProduct(props) {
   return (
     <div className=" flex flex-row flex-wrap gap-20 justify-center align-items">
         {links.map((item)=>(
-            <div key={item.Title[10]} className="p-4 w-11/12 lg:w-3/12 shadow-black flex flex-col  justify-center items-center shadow-2xl rounded-xl">
+            <AnimatePresence><motion.div variants={{hidden:{opacity:0},visible:{opacity:1}}} initial="hidden" animate="visible" exit="hidden" transition={{ease:"linear",duration:2}} key={item.Title[10]} className="p-4 w-11/12 lg:w-3/12 shadow-black flex flex-col  justify-center items-center shadow-2xl rounded-xl">
 
                 <div className="">{item.Title}</div>
                 <div className="my-4"><Image
@@ -38,7 +39,7 @@ export default function TrackedProduct(props) {
                     <button className='bg-black w-24 text-white p-2 rounded '><a href={item.Link}>Buy Now</a></button>
                     <button className='bg-black w-24 text-white p-2 rounded' onClick={()=>DeleteItem(item)} >Remove</button>
                 </div>
-            </div>
+            </motion.div></AnimatePresence>
         ))}
     </div>
     
