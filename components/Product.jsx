@@ -35,15 +35,15 @@ export default function Product(props) {
   }
 
   return (
-    <div className="flex flex-col gap-10">
-    <div className='flex flex-col w-full px-6 gap-6 text-center'>
+    <div className="flex flex-col gap-10 items-center">
+    <div className='flex flex-col w-10/12 p-6 gap-6 text-center shadow-black shadow-2xl rounded-xl'>
         <div className='font-semibold pt-4 '>{props.details.Title}</div>
         <div className='w-full flex flex-row justify-center'><Image
           src={props.details.ImageUrls}
           alt={props.details.Title}
           width={200}
           height={200} 
-          className='shadow-black shadow-2xl rounded-xl'
+          className=''
         /></div>
         <div className='flex flex-col items-center'>
             <div>Current Price= {props.details.Currency}{props.details.CurrentPrice}</div>
